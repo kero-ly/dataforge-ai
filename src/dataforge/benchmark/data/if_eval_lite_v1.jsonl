@@ -1,0 +1,6 @@
+{"id": "if-001", "category": "contains", "prompt": "Answer in one sentence and include the word apple.", "metadata": {"checks": [{"type": "contains", "value": "apple"}, {"type": "max_words", "value": 20}]}}
+{"id": "if-002", "category": "not_contains", "prompt": "Describe the ocean without using the word blue.", "metadata": {"checks": [{"type": "not_contains", "value": "blue"}]}}
+{"id": "if-003", "category": "list", "prompt": "Give a bullet list of three debugging tips.", "metadata": {"checks": [{"type": "min_list_items", "value": 3}]}}
+{"id": "if-004", "category": "json", "prompt": "Return a JSON object with keys name and score.", "metadata": {"checks": [{"type": "json_parseable", "value": true}, {"type": "contains", "value": "name"}, {"type": "contains", "value": "score"}]}}
+{"id": "if-005", "category": "prefix", "prompt": "Start your answer with Summary: and then explain caching briefly.", "metadata": {"checks": [{"type": "starts_with", "value": "Summary:"}]}}
+{"id": "if-006", "category": "combined", "prompt": "In under 15 words, mention banana and avoid the word grape.", "metadata": {"checks": [{"type": "contains", "value": "banana"}, {"type": "not_contains", "value": "grape"}, {"type": "max_words", "value": 15}]}}

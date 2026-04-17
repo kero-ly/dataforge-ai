@@ -1,0 +1,3 @@
+{"id": "seed-001", "instruction": "解释一下 Transformer 的注意力机制"}
+{"id": "seed-002", "instruction": "简短回答：什么是梯度下降"}
+{"id": "seed-003", "instruction": "设计一个高并发 API 的限流方案"}

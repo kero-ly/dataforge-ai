@@ -1,0 +1,2 @@
+{"id":"seed-001","seed_data":{"id":"seed-001","instruction":"解释一下 Transformer 的注意力机制"},"synthetic_data":{"instruction":"请结合背景信息、关键约束和逐步推理过程，给出完整解答：将以下问题扩展为更复杂的推理题：解释一下 Transformer 的注意力机制，并说明可复用的方法。"},"score":null,"status":"COMPLETED","metadata":{"timestamp":"2026-03-06T06:46:22Z"}}
+{"id":"seed-003","seed_data":{"id":"seed-003","instruction":"设计一个高并发 API 的限流方案"},"synthetic_data":{"instruction":"请结合背景信息、关键约束和逐步推理过程，给出完整解答：将以下问题扩展为更复杂的推理题：设计一个高并发 API 的限流方案，并说明可复用的方法。"},"score":null,"status":"COMPLETED","metadata":{"timestamp":"2026-03-06T06:46:22Z"}}

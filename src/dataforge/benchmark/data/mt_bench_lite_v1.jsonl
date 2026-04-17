@@ -1,0 +1,80 @@
+{"id": "mt-001", "category": "writing", "prompt": "Write a concise a persuasive paragraph about remote work benefits.", "metadata": {}}
+{"id": "mt-002", "category": "writing", "prompt": "Write a concise a reflective paragraph about learning from failure.", "metadata": {}}
+{"id": "mt-003", "category": "writing", "prompt": "Write a concise an analytical paragraph about public transit investment.", "metadata": {}}
+{"id": "mt-004", "category": "writing", "prompt": "Write a concise a friendly paragraph about starting a reading habit.", "metadata": {}}
+{"id": "mt-005", "category": "writing", "prompt": "Write a concise a formal paragraph about request for deadline extension.", "metadata": {}}
+{"id": "mt-006", "category": "writing", "prompt": "Write a concise a vivid paragraph about city after rain.", "metadata": {}}
+{"id": "mt-007", "category": "writing", "prompt": "Write a concise a practical paragraph about team documentation habits.", "metadata": {}}
+{"id": "mt-008", "category": "writing", "prompt": "Write a concise a short paragraph about healthy sleep routine.", "metadata": {}}
+{"id": "mt-009", "category": "writing", "prompt": "Write a concise an engaging paragraph about museum visit.", "metadata": {}}
+{"id": "mt-010", "category": "writing", "prompt": "Write a concise a balanced paragraph about AI in classrooms.", "metadata": {}}
+{"id": "mt-011", "category": "roleplay", "prompt": "Pretend you are a museum guide and explain how GPS works in simple terms.", "metadata": {}}
+{"id": "mt-012", "category": "roleplay", "prompt": "Pretend you are a pirate captain and explain cloud storage in simple terms.", "metadata": {}}
+{"id": "mt-013", "category": "roleplay", "prompt": "Pretend you are a chef and explain version control in simple terms.", "metadata": {}}
+{"id": "mt-014", "category": "roleplay", "prompt": "Pretend you are a gardener and explain machine learning in simple terms.", "metadata": {}}
+{"id": "mt-015", "category": "roleplay", "prompt": "Pretend you are a detective and explain database indexing in simple terms.", "metadata": {}}
+{"id": "mt-016", "category": "roleplay", "prompt": "Pretend you are a coach and explain API rate limits in simple terms.", "metadata": {}}
+{"id": "mt-017", "category": "roleplay", "prompt": "Pretend you are a teacher and explain data cleaning in simple terms.", "metadata": {}}
+{"id": "mt-018", "category": "roleplay", "prompt": "Pretend you are a musician and explain distributed systems in simple terms.", "metadata": {}}
+{"id": "mt-019", "category": "roleplay", "prompt": "Pretend you are a librarian and explain embeddings in simple terms.", "metadata": {}}
+{"id": "mt-020", "category": "roleplay", "prompt": "Pretend you are a pilot and explain asynchronous programming in simple terms.", "metadata": {}}
+{"id": "mt-021", "category": "reasoning", "prompt": "Reason through this scenario with three locked boxes and two clues and give the final answer.", "metadata": {}}
+{"id": "mt-022", "category": "reasoning", "prompt": "Reason through this scenario about scheduling six talks in two rooms and give the final answer.", "metadata": {}}
+{"id": "mt-023", "category": "reasoning", "prompt": "Reason through this scenario where a robot sorts colored blocks with one faulty sensor and give the final answer.", "metadata": {}}
+{"id": "mt-024", "category": "reasoning", "prompt": "Reason through this scenario about choosing the fastest route with traffic updates and give the final answer.", "metadata": {}}
+{"id": "mt-025", "category": "reasoning", "prompt": "Reason through this scenario where a team must assign four tasks under constraints and give the final answer.", "metadata": {}}
+{"id": "mt-026", "category": "reasoning", "prompt": "Reason through this scenario with a sequence puzzle involving odd and even swaps and give the final answer.", "metadata": {}}
+{"id": "mt-027", "category": "reasoning", "prompt": "Reason through this scenario about identifying the consistent witness statement and give the final answer.", "metadata": {}}
+{"id": "mt-028", "category": "reasoning", "prompt": "Reason through this scenario where water fills connected tanks at different rates and give the final answer.", "metadata": {}}
+{"id": "mt-029", "category": "reasoning", "prompt": "Reason through this scenario about inferring a hidden rule from examples and give the final answer.", "metadata": {}}
+{"id": "mt-030", "category": "reasoning", "prompt": "Reason through this scenario with a budget allocation tradeoff across three projects and give the final answer.", "metadata": {}}
+{"id": "mt-031", "category": "math", "prompt": "Solve this problem step by step: A train moves 120 km in 2 hours and 90 km in 1 hour.", "metadata": {}}
+{"id": "mt-032", "category": "math", "prompt": "Solve this problem step by step: A laptop gets 15% discount then 8% tax.", "metadata": {}}
+{"id": "mt-033", "category": "math", "prompt": "Solve this problem step by step: Find the area of a triangle with base 12 and height 9.", "metadata": {}}
+{"id": "mt-034", "category": "math", "prompt": "Solve this problem step by step: Divide $840 among 3 people in ratio 2:3:5.", "metadata": {}}
+{"id": "mt-035", "category": "math", "prompt": "Solve this problem step by step: A bacteria culture doubles every 3 hours for 12 hours.", "metadata": {}}
+{"id": "mt-036", "category": "math", "prompt": "Solve this problem step by step: A store sells 48 pens in packs of 6 at $2.5 each.", "metadata": {}}
+{"id": "mt-037", "category": "math", "prompt": "Solve this problem step by step: If x + 3 = 11 and 2y = 14, find x + y.", "metadata": {}}
+{"id": "mt-038", "category": "math", "prompt": "Solve this problem step by step: Convert 3/8 to percentage and decimal.", "metadata": {}}
+{"id": "mt-039", "category": "math", "prompt": "Solve this problem step by step: A rectangle perimeter is 50 and width is 9.", "metadata": {}}
+{"id": "mt-040", "category": "math", "prompt": "Solve this problem step by step: Average of 7, 11, 13, 19, 20.", "metadata": {}}
+{"id": "mt-041", "category": "coding", "prompt": "Write Python code that returns the top k most frequent words from a list.", "metadata": {}}
+{"id": "mt-042", "category": "coding", "prompt": "Write Python code that parses a CSV string into dictionaries.", "metadata": {}}
+{"id": "mt-043", "category": "coding", "prompt": "Write Python code that merges overlapping intervals.", "metadata": {}}
+{"id": "mt-044", "category": "coding", "prompt": "Write Python code that detects a cycle in a directed graph.", "metadata": {}}
+{"id": "mt-045", "category": "coding", "prompt": "Write Python code that implements binary search on a sorted list.", "metadata": {}}
+{"id": "mt-046", "category": "coding", "prompt": "Write Python code that normalizes whitespace in text.", "metadata": {}}
+{"id": "mt-047", "category": "coding", "prompt": "Write Python code that groups records by a chosen key.", "metadata": {}}
+{"id": "mt-048", "category": "coding", "prompt": "Write Python code that retries an async function with backoff.", "metadata": {}}
+{"id": "mt-049", "category": "coding", "prompt": "Write Python code that validates balanced brackets.", "metadata": {}}
+{"id": "mt-050", "category": "coding", "prompt": "Write Python code that computes moving averages over a window.", "metadata": {}}
+{"id": "mt-051", "category": "extraction", "prompt": "Extract the key facts from this text: Marie Curie discovered radium in 1898 and won two Nobel Prizes..", "metadata": {}}
+{"id": "mt-052", "category": "extraction", "prompt": "Extract the key facts from this text: OpenAI released a new model in 2025 for enterprise customers..", "metadata": {}}
+{"id": "mt-053", "category": "extraction", "prompt": "Extract the key facts from this text: The conference starts on July 4 in Berlin and ends July 7..", "metadata": {}}
+{"id": "mt-054", "category": "extraction", "prompt": "Extract the key facts from this text: Alice paid Bob $45 on March 2 for three books..", "metadata": {}}
+{"id": "mt-055", "category": "extraction", "prompt": "Extract the key facts from this text: The server outage lasted 17 minutes and affected 320 users..", "metadata": {}}
+{"id": "mt-056", "category": "extraction", "prompt": "Extract the key facts from this text: A study tracked 120 patients across 5 hospitals..", "metadata": {}}
+{"id": "mt-057", "category": "extraction", "prompt": "Extract the key facts from this text: The startup raised $8 million led by River Fund..", "metadata": {}}
+{"id": "mt-058", "category": "extraction", "prompt": "Extract the key facts from this text: Mount Fuji is 3,776 meters high and located in Japan..", "metadata": {}}
+{"id": "mt-059", "category": "extraction", "prompt": "Extract the key facts from this text: The treaty was signed in 1998 by three countries..", "metadata": {}}
+{"id": "mt-060", "category": "extraction", "prompt": "Extract the key facts from this text: Package ZX-12 ships from Shenzhen every Tuesday..", "metadata": {}}
+{"id": "mt-061", "category": "stem", "prompt": "Explain entropy to a curious beginner.", "metadata": {}}
+{"id": "mt-062", "category": "stem", "prompt": "Explain photosynthesis to a curious beginner.", "metadata": {}}
+{"id": "mt-063", "category": "stem", "prompt": "Explain black holes to a curious beginner.", "metadata": {}}
+{"id": "mt-064", "category": "stem", "prompt": "Explain DNA replication to a curious beginner.", "metadata": {}}
+{"id": "mt-065", "category": "stem", "prompt": "Explain vaccines to a curious beginner.", "metadata": {}}
+{"id": "mt-066", "category": "stem", "prompt": "Explain electric circuits to a curious beginner.", "metadata": {}}
+{"id": "mt-067", "category": "stem", "prompt": "Explain plate tectonics to a curious beginner.", "metadata": {}}
+{"id": "mt-068", "category": "stem", "prompt": "Explain neural networks to a curious beginner.", "metadata": {}}
+{"id": "mt-069", "category": "stem", "prompt": "Explain batteries to a curious beginner.", "metadata": {}}
+{"id": "mt-070", "category": "stem", "prompt": "Explain climate models to a curious beginner.", "metadata": {}}
+{"id": "mt-071", "category": "humanities", "prompt": "Compare Kant and Nietzsche with clear structure.", "metadata": {}}
+{"id": "mt-072", "category": "humanities", "prompt": "Compare Plato and Aristotle with clear structure.", "metadata": {}}
+{"id": "mt-073", "category": "humanities", "prompt": "Compare Renaissance art and Baroque art with clear structure.", "metadata": {}}
+{"id": "mt-074", "category": "humanities", "prompt": "Compare Confucianism and Legalism with clear structure.", "metadata": {}}
+{"id": "mt-075", "category": "humanities", "prompt": "Compare oral history and written archives with clear structure.", "metadata": {}}
+{"id": "mt-076", "category": "humanities", "prompt": "Compare romanticism and modernism with clear structure.", "metadata": {}}
+{"id": "mt-077", "category": "humanities", "prompt": "Compare individualism and collectivism with clear structure.", "metadata": {}}
+{"id": "mt-078", "category": "humanities", "prompt": "Compare myth and history with clear structure.", "metadata": {}}
+{"id": "mt-079", "category": "humanities", "prompt": "Compare tragedy and comedy with clear structure.", "metadata": {}}
+{"id": "mt-080", "category": "humanities", "prompt": "Compare stoicism and existentialism with clear structure.", "metadata": {}}
