@@ -190,13 +190,18 @@ onUnmounted(() => {
   background-repeat: no-repeat;
   transform-origin: center center;
   will-change: transform;
-  /* CSS animation controlled by parent class — restarts on remount */
-  animation: none;
+  /*
+   * Animation always declared here so the browser tracks progress.
+   * Default: paused — freezes at current position (no snap-back on leave).
+   * Active:  running — plays forward from current position.
+   * On remount (activationCounts key change): restarts from scale(1).
+   */
+  animation: kenburns 7200ms linear forwards;
+  animation-play-state: paused;
 }
 
-/* When slide is active, the newly-mounted .slide-bg starts kenburns immediately */
 .slide--active .slide-bg {
-  animation: kenburns 7200ms linear forwards;
+  animation-play-state: running;
 }
 
 /* ─── Dark overlay ────────────────────────────── */
