@@ -10,9 +10,14 @@
         'slide--leaving': i === leaving,
       }"
     >
+      <!--
+        activationCounts[i] increments each time slide i becomes active.
+        Changing :key forces Vue to unmount+remount this element,
+        which restarts the CSS animation from scratch (no JS animation needed).
+      -->
       <div
+        :key="activationCounts[i]"
         class="slide-bg"
-        :ref="el => { if (el) bgRefs[i] = el }"
         :style="{ backgroundImage: `url(${img})` }"
       />
     </div>
@@ -37,7 +42,23 @@
 
       <div class="hero-actions">
         <RouterLink to="/resources" class="btn btn-primary">{{ t('home.hero.cta_start') }}</RouterLink>
-        <a href="https://github.com/kero-ly/dataforge-ai" target="_blank" rel="noopener" class="btn btn-ghost">
+        <a
+          href="https://github.com/kero-ly/dataforge-ai"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-ghost"
+        >
+          <!-- GitHub Octocat icon -->
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-3px;margin-right:6px">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+              -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+              .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+              -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+              .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+              .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+              0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
           {{ t('home.hero.cta_github') }}
         </a>
       </div>
@@ -77,33 +98,31 @@ import img4 from '../assets/4.jpg'
 
 const { t } = useI18n()
 
-const images  = [img1, img2, img3, img4]
+const images = [img1, img2, img3, img4]
 const current = ref(0)
 const leaving = ref(-1)
-const bgRefs  = ref([])
 const copied  = ref(false)
 
-const SLIDE_MS      = 6000   // how long each slide shows
-const FADE_MS       = 1200   // crossfade duration (must match CSS)
-const KENBURNS_MS   = SLIDE_MS + FADE_MS   // zoom over full visible window
+// Each entry tracks how many times slide i has been activated.
+// Changing the value causes Vue to remount the .slide-bg element,
+// which restarts the CSS kenburns animation automatically.
+const activationCounts = ref(images.map(() => 0))
 
-function startKenBurns(index) {
-  const el = bgRefs.value[index]
-  if (!el) return
-  el.style.animation = 'none'
-  void el.offsetWidth            // force reflow → restarts animation
-  el.style.animation = `kenburns ${KENBURNS_MS}ms linear forwards`
-}
+const SLIDE_MS = 6000
+const FADE_MS  = 1200
 
 let leaveTimer = null
 let slideTimer = null
+
+function activate(index) {
+  activationCounts.value[index]++
+}
 
 function advance() {
   const next = (current.value + 1) % images.length
   leaving.value = current.value
   current.value  = next
-  startKenBurns(next)
-
+  activate(next)
   clearTimeout(leaveTimer)
   leaveTimer = setTimeout(() => { leaving.value = -1 }, FADE_MS)
 }
@@ -113,7 +132,7 @@ function goTo(index) {
   clearInterval(slideTimer)
   leaving.value = current.value
   current.value  = index
-  startKenBurns(index)
+  activate(index)
   clearTimeout(leaveTimer)
   leaveTimer = setTimeout(() => { leaving.value = -1 }, FADE_MS)
   slideTimer = setInterval(advance, SLIDE_MS)
@@ -127,7 +146,8 @@ function copyInstall() {
 }
 
 onMounted(() => {
-  startKenBurns(0)
+  // slide 0 starts active; its CSS animation fires automatically
+  // because .slide--active .slide-bg { animation: kenburns ... }
   slideTimer = setInterval(advance, SLIDE_MS)
 })
 
@@ -145,7 +165,6 @@ onUnmounted(() => {
   height: 100vh;
   min-height: 500px;
   overflow: hidden;
-  /* cancel the .page padding-top so the image fills from viewport top */
   margin-top: calc(-1 * var(--nav-height));
 }
 
@@ -160,7 +179,7 @@ onUnmounted(() => {
 }
 
 .slide--active  { opacity: 1; z-index: 1; }
-.slide--leaving { opacity: 0; z-index: 2; }  /* sits above incoming, fades out */
+.slide--leaving { opacity: 0; z-index: 2; }
 
 /* ─── Background image ────────────────────────── */
 .slide-bg {
@@ -171,11 +190,13 @@ onUnmounted(() => {
   background-repeat: no-repeat;
   transform-origin: center center;
   will-change: transform;
+  /* CSS animation controlled by parent class — restarts on remount */
+  animation: none;
 }
 
-@keyframes kenburns {
-  from { transform: scale(1);    }
-  to   { transform: scale(1.6); }
+/* When slide is active, the newly-mounted .slide-bg starts kenburns immediately */
+.slide--active .slide-bg {
+  animation: kenburns 7200ms linear forwards;
 }
 
 /* ─── Dark overlay ────────────────────────────── */
@@ -185,9 +206,9 @@ onUnmounted(() => {
   z-index: 3;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.42) 0%,
-    rgba(0, 10, 30, 0.55) 60%,
-    rgba(0, 10, 30, 0.72) 100%
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 10, 30, 0.52) 60%,
+    rgba(0, 10, 30, 0.68) 100%
   );
 }
 
@@ -210,7 +231,7 @@ onUnmounted(() => {
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 0.6rem;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.5);
 }
 
 .hero-subtitle {
@@ -247,7 +268,8 @@ onUnmounted(() => {
 }
 
 .btn-ghost {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.6rem 1.4rem;
   border-radius: 4px;
   font-size: 0.95rem;
@@ -335,13 +357,13 @@ onUnmounted(() => {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: rotate(45deg) translateY(0);    opacity: 0.5; }
-  50%       { transform: rotate(45deg) translateY(6px);  opacity: 1; }
+  0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 0.5; }
+  50%       { transform: rotate(45deg) translateY(6px); opacity: 1; }
 }
 
 /* ─── Responsive ──────────────────────────────── */
 @media (max-width: 600px) {
-  .hero-badges { display: none; }
+  .hero-badges  { display: none; }
   .install-hint { display: none; }
   .carousel-dots { bottom: 2rem; }
 }
