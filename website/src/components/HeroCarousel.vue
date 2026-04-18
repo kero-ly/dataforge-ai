@@ -145,6 +145,8 @@ onUnmounted(() => {
   height: 100vh;
   min-height: 500px;
   overflow: hidden;
+  /* cancel the .page padding-top so the image fills from viewport top */
+  margin-top: calc(-1 * var(--nav-height));
 }
 
 /* ─── Slide layer ─────────────────────────────── */
@@ -173,7 +175,7 @@ onUnmounted(() => {
 
 @keyframes kenburns {
   from { transform: scale(1);    }
-  to   { transform: scale(1.35); }
+  to   { transform: scale(1.6); }
 }
 
 /* ─── Dark overlay ────────────────────────────── */

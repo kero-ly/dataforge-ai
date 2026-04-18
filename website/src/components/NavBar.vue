@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="{ 'navbar--solid': isScrolled || !isHome }">
     <div class="nav-inner container">
       <RouterLink to="/" class="nav-logo">DataForge</RouterLink>
 
@@ -21,11 +21,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 
 const { t, locale } = useI18n()
+const route = useRoute()
 const menuOpen = ref(false)
+const isScrolled = ref(false)
+
+const isHome = computed(() => route.path === '/')
 
 const links = [
   { path: '/',             label: 'nav.home' },
@@ -36,10 +41,17 @@ const links = [
   { path: '/team',         label: 'nav.team' },
 ]
 
+function onScroll() {
+  isScrolled.value = window.scrollY > 60
+}
+
 function toggleLang() {
   locale.value = locale.value === 'zh' ? 'en' : 'zh'
   localStorage.setItem('df-lang', locale.value)
 }
+
+onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
+onUnmounted(() => window.removeEventListener('scroll', onScroll))
 </script>
 
 <style scoped>
@@ -49,8 +61,16 @@ function toggleLang() {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: var(--primary-color);
   z-index: 1000;
+  /* transparent by default (home hero) */
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Solid when scrolled or on non-home pages */
+.navbar--solid {
+  background: var(--primary-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
