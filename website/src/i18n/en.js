@@ -16,7 +16,7 @@ export default {
     hero: {
       title: 'DataForge',
       subtitle: 'High-Concurrency LLM Data Synthesis Engine',
-      slogan: '"The Refinery" — distilling raw seed data into high-quality LLM training sets',
+      slogan: 'Provide seed data, and synthesize rich, high-quality, massive datasets for you',
       cta_start: 'Get Started',
       cta_github: 'View on GitHub',
       install_tip: 'Click to copy',

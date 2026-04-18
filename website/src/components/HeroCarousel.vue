@@ -196,7 +196,7 @@ onUnmounted(() => {
    * Active:  running — plays forward from current position.
    * On remount (activationCounts key change): restarts from scale(1).
    */
-  animation: kenburns 7200ms linear forwards;
+  animation: kenburns 30000ms linear forwards;
   animation-play-state: paused;
 }
 

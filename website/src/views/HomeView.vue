@@ -61,6 +61,7 @@ const { t } = useI18n()
   line-height: 1.8;
   color: #444;
   max-width: 860px;
+  white-space: pre-line;
 }
 
 /* Highlights */
