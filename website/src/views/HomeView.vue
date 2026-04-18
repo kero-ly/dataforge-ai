@@ -18,7 +18,7 @@
         <h2 class="section-title">{{ t('home.highlights.title') }}</h2>
         <hr class="divider" />
         <div class="grid-3">
-          <div v-for="item in t('home.highlights.items')" :key="item.title" class="card">
+          <div v-for="item in tm('home.highlights.items')" :key="item.title" class="card">
             <div class="card-header">{{ item.icon }} {{ item.title }}</div>
             <p>{{ item.desc }}</p>
           </div>
@@ -29,7 +29,7 @@
     <!-- Stats bar -->
     <section class="stats-bar">
       <div class="container stats-inner">
-        <div v-for="stat in t('home.stats.items')" :key="stat.value" class="stat-item">
+        <div v-for="stat in tm('home.stats.items')" :key="stat.value" class="stat-item">
           <span class="stat-value">{{ stat.value }}</span>
           <span class="stat-label">{{ stat.label }}</span>
         </div>
@@ -49,7 +49,7 @@
 import { useI18n } from 'vue-i18n'
 import HeroCarousel from '../components/HeroCarousel.vue'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 </script>
 
 <style scoped>

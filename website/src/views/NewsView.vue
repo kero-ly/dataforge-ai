@@ -6,7 +6,7 @@
       <hr class="divider" />
 
       <div class="timeline">
-        <div v-for="item in t('news.items')" :key="item.date" class="timeline-item">
+        <div v-for="item in tm('news.items')" :key="item.date" class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-date">{{ item.date }}</span>
@@ -21,7 +21,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t, tm } = useI18n()
 </script>
 
 <style scoped>

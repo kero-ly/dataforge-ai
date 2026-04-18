@@ -6,7 +6,7 @@
       <hr class="divider" />
 
       <div class="resource-groups">
-        <div v-for="group in t('resources.groups')" :key="group.title" class="resource-group">
+        <div v-for="group in tm('resources.groups')" :key="group.title" class="resource-group">
           <h2 class="group-title">{{ group.icon }} {{ group.title }}</h2>
           <div class="resource-cards">
             <a
@@ -29,7 +29,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t, tm } = useI18n()
 </script>
 
 <style scoped>

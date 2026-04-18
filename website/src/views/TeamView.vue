@@ -7,7 +7,7 @@
 
       <div class="grid-4 team-grid">
         <a
-          v-for="member in t('team.members')"
+          v-for="member in tm('team.members')"
           :key="member.name"
           :href="member.github"
           target="_blank"
@@ -36,7 +36,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t, tm } = useI18n()
 </script>
 
 <style scoped>

@@ -5,7 +5,7 @@
       <p class="section-subtitle">{{ t('research.subtitle') }}</p>
       <hr class="divider" />
       <div class="grid-2 research-grid">
-        <div v-for="area in t('research.areas')" :key="area.title" class="card research-card">
+        <div v-for="area in tm('research.areas')" :key="area.title" class="card research-card">
           <div class="card-header">{{ area.icon }} {{ area.title }}</div>
           <p>{{ area.desc }}</p>
         </div>
@@ -16,7 +16,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t, tm } = useI18n()
 </script>
 
 <style scoped>
