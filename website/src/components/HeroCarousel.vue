@@ -173,7 +173,7 @@ onUnmounted(() => {
 
 @keyframes kenburns {
   from { transform: scale(1);    }
-  to   { transform: scale(1.12); }
+  to   { transform: scale(1.35); }
 }
 
 /* ─── Dark overlay ────────────────────────────── */
