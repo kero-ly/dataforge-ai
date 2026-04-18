@@ -18,7 +18,7 @@ export default {
       subtitle: '面向 LLM 时代的高并发数据合成引擎',
       slogan: '"炼油厂" — 将原始种子数据提炼为高质量 LLM 训练集',
       cta_start: '快速开始',
-      cta_github: '查看源码',
+      cta_github: 'Github',
       install_tip: '点击复制',
       install_copied: '已复制！',
     },
